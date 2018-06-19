@@ -8,4 +8,4 @@
   yum: name=glusterfs-server state=latest
 
 - name: start and enable service gluster
-  service: name=glusterd state=restarted
+  service: name=glusterd state=restarted enabled=yes
