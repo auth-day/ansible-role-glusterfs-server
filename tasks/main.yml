@@ -1,0 +1,11 @@
+- name: install epel release 
+  yum: name=epel-release state=latest
+
+- name: copy repo 
+  template: src=gluster.repo.j2 dest=/etc/yum.repos.d/gluster.repo
+
+- name: gluster server
+  yum: name=glusterfs-server state=latest
+
+- name: start and enable service gluster
+  service: name=glusterd state=restarted
